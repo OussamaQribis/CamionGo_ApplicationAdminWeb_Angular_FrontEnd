@@ -8,7 +8,8 @@ import { LoginService } from '../../services/login.service';
   selector: 'app-login',
   standalone: false,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  providers: [MessageService]
 })
 export class LoginComponent {
   valCheck: string[] = ['remember'];
@@ -20,7 +21,8 @@ export class LoginComponent {
   constructor(
       private fb: FormBuilder,
       private router: Router,
-      private service:LoginService) {
+      private service:LoginService,
+      private mess:MessageService) {
 
         
           
@@ -32,7 +34,7 @@ export class LoginComponent {
 
        
        onSubmitForm(form: NgForm) {
-         /* this.service.login(form.value).subscribe(
+          this.service.login(form.value).subscribe(
               (response) => {
                 if (response.jwt != null) {
                   const jwtToken = response.jwt;
@@ -45,6 +47,6 @@ export class LoginComponent {
                   this.mess.add({ key: 'tst', severity: 'error', summary: 'Error Message', detail: 'Incorrect email or password!!!' });
                 }
               }
-            )*/
+            )
       }
 }
