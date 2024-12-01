@@ -33,6 +33,9 @@ export class MenusComponent implements OnInit {
 
     pageIndex: number = 0;
 
+    do(){
+
+    }
     ngOnInit() {
         this.tieredItems = [
             {
@@ -45,7 +48,8 @@ export class MenusComponent implements OnInit {
                         items: [
                             {
                                 label: 'Customer',
-                                icon: 'pi pi-fw pi-plus'
+                                icon: 'pi pi-fw pi-plus',
+                                
                             },
                             {
                                 label: 'Duplicate',

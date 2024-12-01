@@ -13,6 +13,7 @@ import { RippleModule } from 'primeng/ripple';
 import { PasswordModule } from 'primeng/password';
 import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ToastModule } from 'primeng/toast';
     PasswordModule,
     MessagesModule,
     ToastModule,
+		RadioButtonModule,
   ]
 })
 export class SigninModule { }

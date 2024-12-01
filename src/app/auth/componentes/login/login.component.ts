@@ -16,10 +16,9 @@ export class LoginComponent {
     
 
   email:any
-  password:any;
+  motDePasse:any;
 
   constructor(
-      private fb: FormBuilder,
       private router: Router,
       private service:LoginService,
       private mess:MessageService) {
@@ -34,6 +33,8 @@ export class LoginComponent {
 
        
        onSubmitForm(form: NgForm) {
+        console.log(form.value)
+        /*
           this.service.login(form.value).subscribe(
               (response) => {
                 if (response.jwt != null) {
@@ -47,6 +48,6 @@ export class LoginComponent {
                   this.mess.add({ key: 'tst', severity: 'error', summary: 'Error Message', detail: 'Incorrect email or password!!!' });
                 }
               }
-            )
+            )*/
       }
 }

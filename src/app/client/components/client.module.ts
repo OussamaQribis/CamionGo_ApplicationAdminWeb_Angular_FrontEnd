@@ -8,6 +8,7 @@ import { AccueilModule } from './accueil/accueil.module';
 import { DetailDeProfileModule } from './detail-de-profile/detail-de-profile.module';
 import { MesCommandesModule } from './mes-commandes/mes-commandes.module';
 import { NotificationsModule } from './notifications/notifications.module';
+
 @NgModule({
   providers: [
     AccueilModule,
@@ -18,7 +19,7 @@ import { NotificationsModule } from './notifications/notifications.module';
   imports: [
     CommonModule,
     ClientRoutingModule,
-    
+	
   ],
 })
 export class ClientModule { }

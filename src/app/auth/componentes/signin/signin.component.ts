@@ -17,13 +17,11 @@ export class SigninComponent {
   valCheck: string[] = ['remember'];
     
 
-  name:any
+  nom:any
   email:any
-  password:any;
-  userRole:any;
-  valRadio: string = '';
-  confirmPassword:any
-
+  motDePasse:any;
+  role:any;
+  telephone:any;
   constructor( private router: Router,
       private mess:MessageService,
       private service:SigninService) {
@@ -37,6 +35,8 @@ export class SigninComponent {
 
        
        onSubmitForm(form: NgForm) {
+        console.log(form.value)
+        /*
          if(this.password===this.confirmPassword){
           this.service.register(form.value).subscribe((response) => {
             console.log(response)
@@ -50,7 +50,7 @@ export class SigninComponent {
           })
          }else{
           this.mess.add({ key: 'tst', severity: 'error', summary: 'Error Message', detail: 'Incorrect  password!!!' });
-         }
+         }*/
          
       }
 
