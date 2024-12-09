@@ -35,22 +35,23 @@ export class SigninComponent {
 
        
        onSubmitForm(form: NgForm) {
+        
         console.log(form.value)
-        /*
-         if(this.password===this.confirmPassword){
+        
+        if(this.role!=null){
           this.service.register(form.value).subscribe((response) => {
             console.log(response)
             if (response!= null) {
-              this.mess.add({ key: 'tst', severity: 'success', summary: 'Success Message', detail: 'Hi '+response.name });
-              this.router.navigateByUrl("/auth/login");
-             
+              this.router.navigateByUrl("/authentification/login");
             }else{
               this.mess.add({ key: 'tst', severity: 'error', summary: 'Error Message', detail: 'This user already exists!!!' });
              }
           })
-         }else{
-          this.mess.add({ key: 'tst', severity: 'error', summary: 'Error Message', detail: 'Incorrect  password!!!' });
-         }*/
+        }else{
+          this.mess.add({ key: 'tst', severity: 'error', summary: 'Error Message', detail: 'Select Role!!!' });
+        }
+         
+         
          
       }
 

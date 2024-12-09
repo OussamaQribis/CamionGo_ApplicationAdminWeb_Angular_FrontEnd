@@ -34,20 +34,21 @@ export class LoginComponent {
        
        onSubmitForm(form: NgForm) {
         console.log(form.value)
-        /*
+        
           this.service.login(form.value).subscribe(
               (response) => {
                 if (response.jwt != null) {
                   const jwtToken = response.jwt;
                   localStorage.setItem('jwt', jwtToken);
                   localStorage.setItem('userId', response.user.id);
-                  this.mess.add({ key: 'tst', severity: 'success', summary: 'Success Message', detail: 'Hi '+response.user.name });
+                  localStorage.setItem('role', response.user.role);
+                  this.mess.add({ key: 'tst', severity: 'success', summary: 'Success Message', detail: 'Hi '+response.user.nom });
                   this.router.navigateByUrl("/");
                   
                 }else{
                   this.mess.add({ key: 'tst', severity: 'error', summary: 'Error Message', detail: 'Incorrect email or password!!!' });
                 }
               }
-            )*/
+            )
       }
 }

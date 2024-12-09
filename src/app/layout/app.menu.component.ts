@@ -12,20 +12,21 @@ export class AppMenuComponent implements OnInit {
     role: string;
     
 
-    constructor(public layoutService: LayoutService) { }
+    constructor(public layoutService: LayoutService) {
+       console.log(localStorage.getItem('role'))
+        this.role= localStorage.getItem('role');
+     }
 
     ngOnInit() {
-        this.role="admin";
-        if(this.role==="admin"){
+        if(this.role==="ADMIN"){
             this.model = [
                 {
-                    label: 'MAISON',
+                    label: 'Home',
                     items: [
-                        { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: ['/admin/Accueil'] }
+                        { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
                     ]
-                },
-                {
-                    label: 'COMPOSANT',
+                },{
+                    label: 'COMPOSANT', 
                     items: [
                         { label: 'Toutes les commandes', icon: 'pi pi-fw pi-id-card', routerLink: ['/admin/ToutesLesCommandes'] },
                         { label: 'List des clients', icon: 'pi pi-fw pi-id-card', routerLink: ['/admin/ListDesClients'] },
@@ -40,35 +41,69 @@ export class AppMenuComponent implements OnInit {
                     label: 'PARAMETRES',
                     items: [
                         { label: 'Gestion des utilisateurs', icon: 'pi pi-fw pi-id-card', routerLink: ['/admin/GetstionDesutilisateurs'] },
-                        { label: 'Deconnextion', icon: 'pi pi-fw pi-id-card', routerLink: ['/landing'] },
+                        { label: 'Deconnextion', icon: 'pi pi-fw pi-id-card', routerLink: ['/authentification/login'] },
                     ]
                 }
             
             ]
 
         }
-        if(this.role==="client"){
+        if(this.role==="CLIENT"){
+            this.model = [
+                {
+                label: 'MAISON',
+                items: [
+                    { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: ['/client/Accueil'] }
+                ]
+            },
+            {
+                label: 'COMPOSANT',
+                items: [
+                    { label: 'Toutes mes commandes', icon: 'pi pi-fw pi-id-card', routerLink: ['/client/MesCommandes'] },
+                    { label: 'Notifications', icon: 'pi pi-fw pi-id-card', routerLink: ['/client/Notifications'] },
+                    
+                ]
+            },
+            {
+                label: 'PARAMETRES',
+                items: [
+                    { label: 'Detail de profile', icon: 'pi pi-fw pi-id-card', routerLink: ['/client/DetailDeProfile'] },
+                    { label: 'Deconnextion', icon: 'pi pi-fw pi-id-card', routerLink: ['/authentification/login'] },
+                ]
+            }
+            
+                
+            ]
+
+        }
+        if(this.role==="TRANSPORTEUR"){
             this.model = [
             
                 {
-                    label: 'Home',
+                    label: 'MAISON',
                     items: [
-                        { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                        { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: ['/transporteur/Accueil'] }
                     ]
-                },]
-
-        }
-        if(this.role==="transporteur"){
-            this.model = [
-            
+                },
                 {
-                    label: 'Home',
+                    label: 'COMPOSANT',
                     items: [
-                        { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                        { label: 'Toutes mes messions', icon: 'pi pi-fw pi-id-card', routerLink: ['/transporteur/MesMissions'] },
+                        { label: 'Notifications', icon: 'pi pi-fw pi-id-card', routerLink: ['/transporteur/Notifications'] },
+                        
                     ]
-                },]
+                },
+                {
+                    label: 'PARAMETRES',
+                    items: [
+                        { label: 'Detail de profile', icon: 'pi pi-fw pi-id-card', routerLink: ['/transporteur/DetailDeProfile'] },
+                        { label: 'Deconnextion', icon: 'pi pi-fw pi-id-card', routerLink: ['/authentification/login'] },
+                    ]
+                }
+            ]
 
         }
+        /*
         this.model = [
             
             
@@ -218,6 +253,6 @@ export class AppMenuComponent implements OnInit {
                     }
                 ]
             }
-        ];
+        ];*/
     }
 }
